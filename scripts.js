@@ -1,4 +1,4 @@
-const brokerUrl = 'ws://broker.emqx.io:8083/mqtt';
+const brokerUrl = 'wss://broker.emqx.io:8084/mqtt';
 const topicSensor = "tes/189321/topic/sensor";
 const topicLampu = "tes/189321/topic/lampu";
 
