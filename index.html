@@ -27,8 +27,8 @@
             <!-- Card untuk Suhu ESP32 -->
             <div class="col">
                 <div class="card h-100 border-1 shadow-sm rounded-2">
-                    <div class="card-body"> 
-                        <p>Suhu ESP32 :</p>                       
+                    <div class="card-body text-center"> 
+                        <p class="fw-semibold">Suhu ESP32</p>                       
                         <h1 id="suhu">0.0</h1>
                     </div>
                 </div>
@@ -37,11 +37,11 @@
             <!-- Card Untuk Tombol Lampu 1 -->
             <div class="col">
                 <div class="card h-100 border-1 shadow-sm rounded-2">
-                    <div class="card-body">
-                        <p>Tombol Lampu 1 :</p> 
-                        <button class="btn btn-success px-5 py-3" onclick="publish_led1('1')">ON</button>
-                        <button class="btn btn-danger px-5 py-3" onclick="publish_led1('0')">OFF</button>
-                        <br><small>Status Lampu 1 : <strong id="statusLampu1">...</strong></small>
+                    <div class="card-body text-center">
+                        <p class="fw-semibold">Lampu 1</p> 
+                        <button id="lampu1On" class="btn btn-success px-5 py-3" onclick="publish_led1('1')">ON</button>
+                        <button id="lampu1Off" class="btn btn-danger px-5 py-3" onclick="publish_led1('0')">OFF</button>
+                        <br><small class="d-block mt-3">Status : <strong id="statusLampu1">...</strong></small>
                     </div>
                 </div>
             </div> 
@@ -49,11 +49,11 @@
             <!-- Card Untuk Tombol Lampu 2 -->
             <div class="col">
                 <div class="card h-100 border-1 shadow-sm rounded-2">
-                    <div class="card-body">
-                        <p>Tombol Lampu 2 :</p> 
-                        <button class="btn btn-success px-5 py-3" onclick="publish_led2('1')">ON</button>
-                        <button class="btn btn-danger px-5 py-3" onclick="publish_led2('0')">OFF</button>
-                        <br><small>Status Lampu 2 : <strong id="statusLampu2">...</strong></small>
+                    <div class="card-body text-center">
+                        <p class="fw-semibold">Lampu 2</p> 
+                        <button id="lampu2On" class="btn btn-success px-5 py-3" onclick="publish_led2('1')">ON</button>
+                        <button id="lampu2Off" class="btn btn-danger px-5 py-3" onclick="publish_led2('0')">OFF</button>
+                        <br><small class="d-block mt-3">Status : <strong id="statusLampu2">...</strong></small>
                     </div>
                 </div>
             </div> 
@@ -61,11 +61,11 @@
             <!-- Card Untuk Tombol Lampu 3 -->
             <div class="col">
                 <div class="card h-100 border-1 shadow-sm rounded-2">
-                    <div class="card-body">
-                        <p>Tombol Lampu 3 :</p> 
-                        <button class="btn btn-success px-5 py-3" onclick="publish_led3('1')">ON</button>
-                        <button class="btn btn-danger px-5 py-3" onclick="publish_led3('0')">OFF</button>
-                        <br><small>Status Lampu 3 : <strong id="statusLampu3">...</strong></small>
+                    <div class="card-body text-center">
+                        <p class="fw-semibold">Lampu 3</p> 
+                        <button id="lampu3On" class="btn btn-success px-5 py-3" onclick="publish_led3('1')">ON</button>
+                        <button id="lampu3Off" class="btn btn-danger px-5 py-3" onclick="publish_led3('0')">OFF</button>
+                        <br><small class="d-block mt-3">Status : <strong id="statusLampu3">...</strong></small>
                     </div>
                 </div>
             </div> 
@@ -73,18 +73,17 @@
             <!-- Card Untuk Tombol Lampu 4 -->
             <div class="col">
                 <div class="card h-100 border-1 shadow-sm rounded-2">
-                    <div class="card-body">
-                        <p>Tombol Lampu 4 :</p> 
-                        <button class="btn btn-success px-5 py-3" onclick="publish_led4('1')">ON</button>
-                        <button class="btn btn-danger px-5 py-3" onclick="publish_led4('0')">OFF</button>
-                        <br><small>Status Lampu 4 : <strong id="statusLampu4">...</strong></small>
+                    <div class="card-body text-center">
+                        <p class="fw-semibold">Lampu 4</p> 
+                        <button id="lampu4On" class="btn btn-success px-5 py-3" onclick="publish_led4('1')">ON</button>
+                        <button id="lampu4Off" class="btn btn-danger px-5 py-3" onclick="publish_led4('0')">OFF</button>
+                        <br><small class="d-block mt-3">Status : <strong id="statusLampu4">...</strong></small>
                     </div>
                 </div>
             </div> 
 
         </div>  
-        <!-- Bagian Akhir Element Layout & Card -->      
-
+        <!-- Bagian Akhir Element Layout & Card -->
         
     </div>
 
