@@ -1,9 +1,9 @@
 const brokerUrl = 'ws://broker.emqx.io:8083/mqtt';
-const topicSensor = "tes/189321/topic/sensor";
-const topicLampu1 = "tes/189321/topic/lampu1";
-const topicLampu2 = "tes/189321/topic/lampu2";
-const topicLampu3 = "tes/189321/topic/lampu3";
-const topicLampu4 = "tes/189321/topic/lampu4";
+const topicSensor = "tes/18945421/topic/sensor";
+const topicLampu1 = "tes/18945421/topic/lampu1";
+const topicLampu2 = "tes/18945421/topic/lampu2";
+const topicLampu3 = "tes/18945421/topic/lampu3";
+const topicLampu4 = "tes/18945421/topic/lampu4";
 
 const client = new MQTTClient(brokerUrl);
 const options = { qos: 0, retain: true };
@@ -31,32 +31,36 @@ client.onMessage = (topic, message) => {
         var statusLampu1 = message.toString();
         if (statusLampu1 == '0') statusLampu1 = "OFF";
         if (statusLampu1 == '1') statusLampu1 = "ON";
-        document.getElementById("statusLampu1").innerHTML = statusLampu1;        
+        document.getElementById("statusLampu1").innerHTML = statusLampu1;
+        setButtonState("lampu1On", "lampu1Off", statusLampu1);
     }
     else if (topic === topicLampu2) {
         var statusLampu2 = message.toString();
         if (statusLampu2 == '0') statusLampu2 = "OFF";
         if (statusLampu2 == '1') statusLampu2 = "ON";
-        document.getElementById("statusLampu2").innerHTML = statusLampu2;        
+        document.getElementById("statusLampu2").innerHTML = statusLampu2; 
+        setButtonState("lampu2On", "lampu2Off", statusLampu2);       
     }
     else if (topic === topicLampu3) {
         var statusLampu3 = message.toString();
         if (statusLampu3 == '0') statusLampu3 = "OFF";
         if (statusLampu3 == '1') statusLampu3 = "ON";
-        document.getElementById("statusLampu3").innerHTML = statusLampu3;        
+        document.getElementById("statusLampu3").innerHTML = statusLampu3;
+        setButtonState("lampu3On", "lampu3Off", statusLampu3)        
     }
     else if (topic === topicLampu4) {
         var statusLampu4 = message.toString();
         if (statusLampu4 == '0') statusLampu4 = "OFF";
         if (statusLampu4 == '1') statusLampu4 = "ON";
-        document.getElementById("statusLampu4").innerHTML = statusLampu4;        
+        document.getElementById("statusLampu4").innerHTML = statusLampu4;
+        setButtonState("lampu4On", "lampu4Off", statusLampu4);
     }
     
 };
 
 //Contoh Fungsi Publish
 function publish_led1(message) {
-    client.publish(topicLampu1, message, options);        
+    client.publish(topicLampu1, message, options);
 }
 
 function publish_led2(message) {
@@ -69,6 +73,19 @@ function publish_led3(message) {
 
 function publish_led4(message) {
     client.publish(topicLampu4, message, options);        
+}
+
+function setButtonState(onBtnId, offBtnId, status) {
+    const onBtn  = document.getElementById(onBtnId);
+    const offBtn = document.getElementById(offBtnId);
+
+    if (status === 'ON') {
+        onBtn.disabled  = true;
+        offBtn.disabled = false;
+    } else {
+        onBtn.disabled  = false;
+        offBtn.disabled = true;
+    }
 }
 
 
